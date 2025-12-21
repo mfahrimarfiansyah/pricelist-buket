@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricelist Buket Bunga</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sacramento&display=swap');
+
+    body {
+      background: linear-gradient(135deg, #c0a0e3, #f0c3a0, #f0c3b0);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #4b3b5c;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 0;
+      color: #dba9b3;
+      text-shadow: 2px 2px 4px #7a5a6c;
+    }
+    h3.subtitle {
+      font-family: 'Sacramento', cursive;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 30px;
+      color: #f1e0d6;
+      text-shadow: 1px 1px 3px #7a5a6c;
+    }
+    .main-image {
+      display: block;
+      margin: 0 auto 50px;
+      width: 120px;
+      height: 150px;
+      background: pink;
+      border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(200,140,140,0.7);
+      background-image: url('images/Bouquet.jpg'); /* Contoh image bunga */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  padding: 30px 40px;
+  box-shadow: 5px 5px 20px rgba(150, 120, 160, 0.4);
+  font-size: 16px;
+}
+
+/* Video background */
+.video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25; /* biar lembut */
+}
+
+/* Isi konten di atas video */
+.container > *:not(.video-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+    .container {
+  max-width: 900px;
+  margin: 0 auto;
+  background:
+    url('images/flower-pattern.png') repeat,
+    rgba(250, 240, 250, 0.6);
+  background-size: 150px;
+  border-radius: 40px;
+  padding: 30px 40px;
+  box-shadow: 5px 5px 20px rgba(150, 120, 160, 0.4);
+  position: relative;
+  font-size: 16px;
+}
+
+    .contact-info {
+      background: #fdeeda;
+      padding: 20px;
+      border-radius: 25px;
+      width: 230px;
+      box-shadow: 2px 2px 10px #ccb2d0;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+    .contact-info p, .contact-info a {
+      margin: 5px 0;
+      color: #62384b;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .products-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .product {
+      background: #fbe8f5;
+      border-radius: 25px;
+      padding: 15px 20px;
+      width: 260px;
+      box-shadow: inset 0 0 15px #e7cad7, 0 4px 8px rgba(180, 110, 130, 0.3);
+      color: #6a4575;
+      position: relative;
+    }
+    .product h4 {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #c4799f;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 12px;
+      box-shadow: 0 5px 10px rgba(160, 90, 120, 0.5);
+    }
+    .product ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 0;
+      font-size: 14px;
+    }
+    .product ul li {
+      margin-bottom: 8px;
+    }
+    .note-request {
+      color: #d3586b;
+      font-style: italic;
+      font-weight: bold;
+      margin-top: 5px;
+      font-size: 13px;
+    }
+    .section-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #cf7898;
+      text-align: center;
+      margin: 40px 0 20px;
+      text-shadow: 2px 2px 4px #9e5978;
+    }
+    .buket-request {
+      background: #fcfbf8;
+      border: 2px dashed #d893a0;
+      padding: 15px;
+      border-radius: 20px;
+      text-align: center;
+      font-style: italic;
+      color: #a65a69;
+      max-width: 230px;
+      margin: 20px auto;
+      font-weight: 600;
+      box-shadow: 0 0 10px #dbb7c0;
+    }
+    /* Icons or images inside circles */
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      background: #fae6e9;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 10px;
+      box-shadow: 1px 1px 5px #d5969f;
+    }
+    .icon-circle img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .products-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pricelist Buket</h1>
+  <h3 class="subtitle">Gift For You</h3>
+
+  <div class="container">
+
+    <div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="videos/videolatar.mp4" type="video/mp4">
+  </video>
+</div>
+
+<audio id="bg-music" autoplay loop muted>
+  <source src="audio/musikbunga.mp3" type="audio/mp3">
+</audio>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <p><strong>Gift For You</strong></p>
+      <p>Instagram: <a href="https://instagram.com/aylarayha_" target="_blank">@aylarayha</a></p>
+      <p>Whatsapp: <a href="tel:+6282298397104">082298397104</a></p>
+      <p><strong>Payment:</strong> bank bjb, dana, gopay</p>
+    </div>
+
+    <!-- Produk Utama -->
+    <div class="main-image" title="Macam-Macam Buket" aria-label="Macam-Macam Buket"></div>
+
+    <!-- Buket Request -->
+    <div class="buket-request" style="margin-bottom:30px;">
+      Bisa request via WhatsApp atau DM
+    </div>
+
+    <!-- Produk -->
+    <div class="section-title">Buket Bunga Palsu</div>
+    <div class="products-section">
+      <!-- Buket Tangkai -->
+      <div class="product">
+        <h4>Buket Tangkai</h4>
+        <img src="images/Single flower.jpg" alt="Buket Tangkai">
+        <ul>
+          <li>Mulai dari 15k - 110k</li>
+          <li><em>Seruat request</em></li>
+        </ul>
+      </div>
+
+      <!-- Buket Tulip -->
+      <div class="product">
+        <h4>Buket Tulip</h4>
+        <img src="images/buket-tulip.jpg" alt="Buket Tulip" />
+        <ul>
+          <li>1 tangkai 30k</li>
+          <li>4 tangkai 70k</li>
+          <li><em>Bisa request</em></li>
+        </ul>
+      </div>
+
+      <!-- Bunga Plastik -->
+      <div class="product">
+        <h4>Bunga Plastik</h4>
+        <img src="images/bunga-plastik.jpg" alt="Bunga Plastik" />
+        <ul>
+          <li>70k</li>
+          <li><em>Bisa request</em></li>
+          <li>35k</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">Buket Kerudung</div>
+    <div class="products-section">
+      <div class="product" style="width: 260px; margin: 0 auto;">
+        <img src="images/buket-kerudung.jpg" alt="Buket Kerudung" />
+        <ul>
+          <li>Segiempat 40k</li>
+          <li>Pashmina 60k</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">Buket Boneka</div>
+    <div class="products-section">
+      <div class="product" style="width: 260px; margin: 0 auto;">
+        <img src="images/buket-boneka.jpg" alt="Buket Boneka" />
+        <p style="text-align: center; font-weight: 700;">60k</p>
+      </div>
+    </div>
+
+    <div class="section-title">Buket Sesuai Request</div>
+    <div class="products-section">
+      <div class="product">
+        <img src="images/buket-uang.jpg" alt="Buket Uang" />
+        <p style="text-align:center; font-weight: 600;">UANG</p>
+      </div>
+      <div class="product">
+        <img src="images/buket-snak.jpg" alt="Buket Snack" />
+        <p style="text-align:center; font-weight: 600;">SNACK</p>
+      </div>
+      <div class="product">
+        <img src="images/buket photocard mark lee.jpg" alt="Buket Photocard/Popland" />
+        <p style="text-align:center; font-weight: 600;">PHOTOCARD/POPLAND</p>
+      </div>
+      <div class="product">
+        <img src="images/buket coklat.jpg" alt="Buket Coklat" />
+        <p style="text-align:center; font-weight: 600;">COKLAT</p>
+      </div>
+      <div class="product">
+        <img src="images/buket mainan.jpg" alt="Buket Mainan" />
+        <p style="text-align:center; font-weight: 600;">MAINAN</p>
+      </div>
+    </div>
+  </div>
+  <script>
+  const music = document.getElementById("bg-music");
+  music.volume = 0.15; // nada rendah (0.1 – 0.2 bagus)
+
+  function enableSound() {
+    music.muted = false;
+    music.play();
+    document.removeEventListener("click", enableSound);
+    document.removeEventListener("scroll", enableSound);
+  }
+
+  document.addEventListener("click", enableSound);
+  document.addEventListener("scroll", enableSound);
+</script>
+</body>
+</html>
